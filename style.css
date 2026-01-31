@@ -191,7 +191,9 @@ footer {
 /* MOBILE FIXES */
 @media (max-width: 768px) {
     .hero {
-        background-position: center top; /* FIX: better crop on phones */
+        background-image: url("assets/coc-mobile.jpg"); /* Mobile background */
+        background-position: center top; /* Better crop on phones */
+        background-size: cover;
         min-height: 100svh;
     }
 
