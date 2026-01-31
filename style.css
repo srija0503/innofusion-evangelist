@@ -12,21 +12,25 @@ body {
 /* HERO */
 .hero {
     position: relative;
-    height: 100vh;
-    background: url("assets/coc.jpg") center/cover no-repeat;
+    min-height: 100svh; /* FIX: mobile-safe viewport height */
+    width: 100%;
+    background-image: url("assets/coc.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45); /* Lighter overlay - 45% instead of 65% */
-    backdrop-filter: blur(3px); /* Less blur for more visibility */
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
 }
 
 .hero-content {
     position: relative;
     z-index: 1;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,13 +42,13 @@ body {
 .hero h1 {
     font-size: 3.5rem;
     color: #facc15;
-    text-shadow: 0 0 30px #f59e0b, 0 0 10px rgba(0, 0, 0, 0.8); /* Enhanced glow for visibility */
+    text-shadow: 0 0 30px #f59e0b, 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 .subtitle {
     font-size: 1.4rem;
     margin-bottom: 20px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .btn-primary {
@@ -56,7 +60,7 @@ body {
     font-weight: bold;
     margin-top: 10px;
     transition: transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4); /* Glow effect */
+    box-shadow: 0 4px 15px rgba(250, 204, 21, 0.4);
 }
 
 .btn-primary:hover {
@@ -68,7 +72,7 @@ body {
     margin-top: 30px;
     font-size: 1.9rem;
     font-style: italic;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9); /* Strong shadow for visibility */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
 /* COUNTDOWN */
@@ -79,10 +83,10 @@ body {
 }
 
 .countdown div {
-    background: rgba(0, 0, 0, 0.7); /* Slightly darker for readability */
+    background: rgba(0, 0, 0, 0.7);
     padding: 12px 16px;
     border-radius: 8px;
-    border: 1px solid rgba(250, 204, 21, 0.3); /* Subtle border */
+    border: 1px solid rgba(250, 204, 21, 0.3);
 }
 
 .countdown span {
@@ -149,19 +153,19 @@ th {
     font-weight: bold;
 }
 
-.gold { 
-    background: linear-gradient(90deg, #facc15, #f59e0b); 
-    color: black; 
+.gold {
+    background: linear-gradient(90deg, #facc15, #f59e0b);
+    color: black;
 }
 
-.silver { 
-    background: linear-gradient(90deg, #e5e7eb, #9ca3af); 
-    color: black; 
+.silver {
+    background: linear-gradient(90deg, #e5e7eb, #9ca3af);
+    color: black;
 }
 
-.bronze { 
-    background: linear-gradient(90deg, #fb923c, #f97316); 
-    color: black; 
+.bronze {
+    background: linear-gradient(90deg, #fb923c, #f97316);
+    color: black;
 }
 
 /* ANIMATIONS */
@@ -184,25 +188,30 @@ footer {
     color: #9ca3af;
 }
 
-/* MOBILE */
+/* MOBILE FIXES */
 @media (max-width: 768px) {
-    .hero h1 { 
-        font-size: 2.4rem; 
+    .hero {
+        background-position: center top; /* FIX: better crop on phones */
+        min-height: 100svh;
     }
-    
-    .tagline { 
-        font-size: 1.4rem; 
+
+    .hero h1 {
+        font-size: 2.4rem;
     }
-    
-    .countdown { 
-        flex-wrap: wrap; 
-        justify-content: center; 
+
+    .tagline {
+        font-size: 1.4rem;
     }
-    
-    .section { 
-        padding: 25px 20px; 
+
+    .countdown {
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    
+
+    .section {
+        padding: 25px 20px;
+    }
+
     .perks-image img {
         max-width: 200px;
     }
